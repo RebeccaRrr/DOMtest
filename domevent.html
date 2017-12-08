@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My page</title>
+  </head>
+  <body>
+    <p class="opener">first paragraph</p>
+    <p><em>second</em> paragraph</p>
+    <p id="closer">final</p>
+    <!-- and that's about it -->
+    <script>
+      var mypara = document.getElementById('closer');
+
+    //       mypara.addEventListener('click',function(){
+    //       alert('Boo!')},false);
+    // mypara.onclick = function(){
+    //     alert('ouch!');
+    // }
+    function paraHandler(e){
+        alert('clicked paragragh');
+        e.stopPropagation();
+    }
+    mypara.addEventListener('click',paraHandler,false);
+    document.body.addEventListener('click',function(){ alert('click body')},false);
+    document.addEventListener('click',function(){ alert('click doc')},false);
+    window.addEventListener('click',function(){ alert('click window')},false);
+
+
+
+
+    </script>
+  </body>
+</html>
